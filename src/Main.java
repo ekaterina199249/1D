@@ -1,4 +1,3 @@
-import java.sql.Array;
 import java.util.Arrays;
 
 public class Main {
@@ -14,10 +13,16 @@ public class Main {
         System.out.println();
 
         System.out.println("Задача 2");
-        int[] expenses = {9365, 9658, 9587, 9248, 9287};
-        int min = Arrays.stream(expenses).min().getAsInt();
-        int max = Arrays.stream(expenses).max().getAsInt();
 
+        int[]summaWeek = {9365, 9658, 9587, 9248, 9287};
+        int min = summaWeek[0], max = summaWeek[0];
+        for ( int i = 1; i < summaWeek.length; i++) {
+            if (summaWeek[i] > max) {
+                max = summaWeek[i];
+            }
+            if (summaWeek[i] < min)
+                min = summaWeek[i];
+        }
             System.out.println("Минимальная сумма за неделю составила " + min + " рублей");
             System.out.println("Максимальная сумма за неделю составила " + max + " рублей");
 
